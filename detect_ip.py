@@ -12,7 +12,7 @@ arg = 'ip route list'
 proc = subprocess.Popen(arg, shell=True, stdout=subprocess.PIPE)
 data = proc.communicate()
 split_data = data[0].split()
-# not sure why the index look up is failing
+# in orer to do the look up need to convert string 'src' to type Bytes
 # ind = split_data[7]
 # ipaddr = split_data[split_data.index('src') + 1]
 
