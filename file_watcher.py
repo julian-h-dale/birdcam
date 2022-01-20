@@ -25,17 +25,9 @@ class Handler(FileSystemEventHandler):
     fileUploader = FileUploader()
     @staticmethod
     def on_any_event(event): 
-        if event.is_directory:
-            # seems this always gets called
-            print("directory event")
-        # when does created get called?
-        elif event.event_type == 'created':
+        if event.event_type == 'created':
             print("created event")
             Handler.fileUploader.upload(event.src_path)
-        elif event.event_type == 'modified':
-            print("file modified " + event.src_path)
-            Handler.fileUploader.upload(event.src_path)
-
 
 if __name__ == '__main__': 
     print("starting program")
