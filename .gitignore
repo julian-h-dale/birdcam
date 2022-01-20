@@ -1,2 +1,3 @@
 pics/**
 creds/**
+__pycache__/**
