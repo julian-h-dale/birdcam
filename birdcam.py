@@ -12,7 +12,7 @@ while True:
     print("motion detected")
     camera.start_preview()
     # create a unique id for the filename
-    filename = './pics/' + datetime.now().strftime('%Y%m-%d%h-%M%S-') + str(uuid4()) + '.jpg'
+    filename = './pics/' + datetime.now().strftime('%Y_%m_%d_%H_%M_%S_%f_') + str(uuid4()) + '.jpg'
     camera.capture(filename)
     pir.wait_for_no_motion()
     camera.stop_preview()
