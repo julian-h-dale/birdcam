@@ -1,6 +1,7 @@
 from gpiozero import MotionSensor
 from picamera import PiCamera
 from file_utilities import FilenameGenerator
+from file_watcher import Watcher
 
 class BirdCam:
     
@@ -19,15 +20,7 @@ class BirdCam:
 
 
 if __name__ == '__main__':
+    # start the birdcam
     birdcam = BirdCam()
     birdcam.birdWatch()
-
-# while True:
-#     pir.wait_for_motion()
-#     print("motion detected")
-#     camera.start_preview()
-#     # create a unique id for the filename
-#     filename = './pics/' + datetime.now().strftime('%Y_%m_%d_%H_%M_%S_%f_') + str(uuid4()) + '.jpg'
-#     camera.capture(filename)
-#     pir.wait_for_no_motion()
-#     camera.stop_preview()
+    # how to combine with watcher?
