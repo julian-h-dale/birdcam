@@ -1,6 +1,6 @@
 #! /bin/bash
 
-python3 ./birdcam.py &
+hug -f birdcamserver.py &
 python3 ./file_watcher.py &
 
 ps -aux | grep python
